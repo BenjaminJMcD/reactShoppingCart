@@ -31,7 +31,13 @@ function App() {
         <Filter />
       }
       <div className="cardsContainer">
-        {/* useEffect with filter ==> array. array.map */}
+        {items.map((item) => (
+          <Cards
+            image = {item.image}
+            descript = {item.description}
+            price = {item.price}
+          />
+        ))}
       </div>
     </>
   )
