@@ -1,12 +1,19 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Filter from './Filter'
 import Cards from './Cards';
+import fetchItems from './fetchItems';
 
 function App() {
 
   const [showFilter, setShowFilter] = useState(true);
 
   const [itemList, setItemList] = useState([]);
+
+  
+  const items = fetchItems();
+
+  console.log(items);
+
 
 
   return (
