@@ -1,12 +1,9 @@
 import { useState, useEffect } from 'react'
-import Filter from './Filter'
 import Cards from './Cards';
 import fetchItems from './fetchItems';
 import shoppingCart from './assets/grocery-store.png';
 
 function App() {
-
-  const [showFilter, setShowFilter] = useState(true);
 
   const [itemList, setItemList] = useState([]);
 
@@ -31,17 +28,16 @@ function App() {
         </nav>
         <div className="shopIcon-Dynamic"><img src={shoppingCart} alt="Shopping Cart Image" className="shoppingCartImg" /></div>
       </div>
-      {showFilter &&
-        <Filter />
-      }
       <div className="cardsContainer">
-        {items.map((item) => (
-          <Cards
-            image = {item.image}
-            title = {item.title}
-            price = {item.price}
-          />
-        ))}
+
+          {items.map((item) => (
+            <Cards
+              image = {item.image}
+              title = {item.title}
+              price = {item.price}
+            />
+          ))}
+
       </div>
     </div>
   )
