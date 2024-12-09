@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Filter from './Filter'
 import Cards from './Cards';
 import fetchItems from './fetchItems';
+import shoppingCart from './assets/grocery-store.png';
 
 function App() {
 
@@ -17,16 +18,19 @@ function App() {
 
 
   return (
-    <>
-      <div className="title">
-        <h1>FANCY SHOPS</h1>
+    <div className="app">
+      <div className="header">
+        <h1 className="title">FANCY SHOPS</h1>
       </div>
-      <nav>
-        <h3>Electronics</h3>
-        <h3>Men's Apparel</h3>
-        <h3>Women's Apparel</h3>
-        <h3>Cart Placeholder</h3>
-      </nav>
+      <div className="navbar">
+        <nav>
+          <h3>Electronics</h3>
+          <h3>Men's Apparel</h3>
+          <h3>Women's Apparel</h3>
+          <h3>Cart Placeholder</h3>
+        </nav>
+        <div className="shopIcon-Dynamic"><img src={shoppingCart} alt="Shopping Cart Image" className="shoppingCartImg" /></div>
+      </div>
       {showFilter &&
         <Filter />
       }
@@ -34,12 +38,12 @@ function App() {
         {items.map((item) => (
           <Cards
             image = {item.image}
-            descript = {item.description}
+            title = {item.title}
             price = {item.price}
           />
         ))}
       </div>
-    </>
+    </div>
   )
 }
 
