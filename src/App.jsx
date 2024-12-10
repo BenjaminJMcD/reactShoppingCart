@@ -35,6 +35,7 @@ function App() {
               image = {item.image}
               title = {item.title}
               price = {item.price}
+              rating = {item.rating.rate}
             />
           ))}
 
