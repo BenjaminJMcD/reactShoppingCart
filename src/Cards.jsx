@@ -2,7 +2,7 @@ import { Rating } from "@mui/material"
 
 
 
-function Cards({ image, title, price, rating }) {
+function Cards({ image, title, price, rating, count }) {
 
 
 
@@ -14,6 +14,7 @@ function Cards({ image, title, price, rating }) {
             <p className="cardPrice">${price}</p>
             <div className="starRatingContainer">
                 <Rating name='half-rating-read' defaultValue={rating} precision={0.1} readOnly />
+                <p className="ratingCount">({count})</p>
             </div>
             <button className="cardAddButton">Add to Cart</button>
         </div>

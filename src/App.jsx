@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Cards from './Cards';
 import fetchItems from './fetchItems';
 import shoppingCart from './assets/grocery-store.png';
@@ -36,6 +36,7 @@ function App() {
               title = {item.title}
               price = {item.price}
               rating = {item.rating.rate}
+              count = {item.rating.count}
             />
           ))}
 

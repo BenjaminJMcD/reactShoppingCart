@@ -2,7 +2,7 @@
 /* HEADING + NAV BAR + SHOPPING ICON */
 
 .header {
-  background-color: blue;
+  background-color: rgb(129, 150, 94);
   height: 120px;
   padding-top: 38px;
 }
@@ -64,4 +64,10 @@ nav {
 .cardAddButton {
   width: 100px;
   height: 40px;
+}
+
+.starRatingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
