@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import Cards from './Cards';
-
-import shoppingCart from './assets/grocery-store.png';
+import shoppingCartIcon from './assets/grocery-store.png';
 
 function App() {
 
   const [items, setItems] = useState([]);
   const [filter, setFilter] = useState(null);
+  const [shoppingCartList, setShoppingCartList] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -51,8 +51,16 @@ function App() {
   function handleAdd(e) {
     const parentNode = e.target.parentNode;
     const id = parentNode.getAttribute("listId");
-    console.log(id)
+    const object = items.find(obj => obj.id == id);
+    if (shoppingCartList.length == 0) {
+      setShoppingCartList([object]);
+    }
+    else {
+      const newCart = [...shoppingCartList, object];
+      setShoppingCartList(newCart);
+    }
   }
+
 
 
 
@@ -68,7 +76,7 @@ function App() {
           <p onClick={handleFilter}>Women's Apparel</p>
           <p onClick={handleFilter}>Jewelry</p>
         </nav>
-        <div className="shopIcon-Dynamic"><img src={shoppingCart} alt="Shopping Cart Image" className="shoppingCartImg" /></div>
+        <div className="shopIcon-Dynamic"><img src={shoppingCartIcon} alt="Shopping Cart Image" className="shoppingCartImg" /></div>
       </div>
       <div className="cardsContainer">
           {items.map((item) => (
