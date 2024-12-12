@@ -2,13 +2,13 @@ import { Rating } from "@mui/material"
 
 
 
-function Cards({ image, title, price, rating, count }) {
+function Cards({ listId, image, title, price, rating, count, handleAdd }) {
 
 
 
 
     return (
-        <div className="singleCard">
+        <div listId={listId} className="singleCard">
             <img className="cardImage" src={image} alt={title} />
             <p className="cardTitle">{title}</p>
             <p className="cardPrice">${price}</p>
@@ -16,7 +16,7 @@ function Cards({ image, title, price, rating, count }) {
                 <Rating name='half-rating-read' defaultValue={rating} precision={0.1} readOnly />
                 <p className="ratingCount">({count})</p>
             </div>
-            <button className="cardAddButton">Add to Cart</button>
+            <button onClick={handleAdd} className="cardAddButton">Add to Cart</button>
         </div>
     )
 }

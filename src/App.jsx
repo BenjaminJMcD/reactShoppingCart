@@ -48,7 +48,13 @@ function App() {
     }
   }
 
-  console.log(filter);
+  function handleAdd(e) {
+    const parentNode = e.target.parentNode;
+    const id = parentNode.getAttribute("listId");
+    console.log(id)
+  }
+
+
 
   return (
     <div className="app">
@@ -68,11 +74,13 @@ function App() {
           {items.map((item) => (
             <Cards
               key = {item.id}
+              listId = {item.id}
               image = {item.image}
               title = {item.title}
               price = {item.price}
               rating = {item.rating.rate}
               count = {item.rating.count}
+              handleAdd = {handleAdd}
             />
           ))}
 
