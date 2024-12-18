@@ -50,7 +50,7 @@ function App() {
 
   function handleAdd(e) {
     const parentNode = e.target.parentNode;
-    const id = parentNode.getAttribute("listId");
+    const id = parentNode.getAttribute("listid");
     const object = items.find(obj => obj.id == id);
     if (shoppingCartList.length == 0) {
       setShoppingCartList([object]);
@@ -59,6 +59,10 @@ function App() {
       const newCart = [...shoppingCartList, object];
       setShoppingCartList(newCart);
     }
+  }
+
+  function viewSingleItem(e) {
+    
   }
 
 
@@ -76,19 +80,25 @@ function App() {
           <p onClick={handleFilter}>Women's Apparel</p>
           <p onClick={handleFilter}>Jewelry</p>
         </nav>
-        <div className="shopIcon-Dynamic"><img src={shoppingCartIcon} alt="Shopping Cart Image" className="shoppingCartImg" /></div>
+        <div className="shopIcon-Dynamic">
+          <img src={shoppingCartIcon} alt="Shopping Cart Image" className="shoppingCartImg" />
+          {shoppingCartList.length >0 &&
+          <p className="iconCounter">{shoppingCartList.length}</p>
+          }
+        </div>
       </div>
       <div className="cardsContainer">
           {items.map((item) => (
             <Cards
               key = {item.id}
-              listId = {item.id}
+              listid = {item.id}
               image = {item.image}
               title = {item.title}
               price = {item.price}
               rating = {item.rating.rate}
               count = {item.rating.count}
               handleAdd = {handleAdd}
+              viewSingleItem = {viewSingleItem}
             />
           ))}
 

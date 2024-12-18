@@ -2,14 +2,14 @@ import { Rating } from "@mui/material"
 
 
 
-function Cards({ listId, image, title, price, rating, count, handleAdd }) {
+function Cards({ listid, image, title, price, rating, count, handleAdd, viewSingleItem }) {
 
 
 
 
     return (
-        <div listId={listId} className="singleCard">
-            <img className="cardImage" src={image} alt={title} />
+        <div listid={listid} className="singleCard">
+            <img onClick={viewSingleItem} className="cardImage" src={image} alt={title} />
             <p className="cardTitle">{title}</p>
             <p className="cardPrice">${price}</p>
             <div className="starRatingContainer">
