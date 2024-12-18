@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
 import Cards from './Cards';
-import shoppingCartIcon from './assets/grocery-store.png';
+import SingleItem from './SingleItem';
+import Cart from './Cart';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 
 function App() {
 
@@ -62,7 +65,7 @@ function App() {
   }
 
   function viewSingleItem(e) {
-    
+
   }
 
 
@@ -71,38 +74,16 @@ function App() {
   return (
     <div className="app">
       <div className="header">
-        <h1 onClick={handleFilter} className="title">FANCY SHOPS</h1>
+        <h1 className="title">FANCY SHOPS</h1>
       </div>
-      <div className="navbar">
-        <nav>
-          <p onClick={handleFilter}>Electronics</p>
-          <p onClick={handleFilter}>Men's Apparel</p>
-          <p onClick={handleFilter}>Women's Apparel</p>
-          <p onClick={handleFilter}>Jewelry</p>
-        </nav>
-        <div className="shopIcon-Dynamic">
-          <img src={shoppingCartIcon} alt="Shopping Cart Image" className="shoppingCartImg" />
-          {shoppingCartList.length >0 &&
-          <p className="iconCounter">{shoppingCartList.length}</p>
-          }
-        </div>
-      </div>
-      <div className="cardsContainer">
-          {items.map((item) => (
-            <Cards
-              key = {item.id}
-              listid = {item.id}
-              image = {item.image}
-              title = {item.title}
-              price = {item.price}
-              rating = {item.rating.rate}
-              count = {item.rating.count}
-              handleAdd = {handleAdd}
-              viewSingleItem = {viewSingleItem}
-            />
-          ))}
 
-      </div>
+      <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<Cards />} />
+            <Route path="/product/:id" element={<SingleItem />} />
+            <Route path="/cart" element={<Cart />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }
