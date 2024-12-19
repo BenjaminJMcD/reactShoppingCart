@@ -51,18 +51,6 @@ function App() {
   //   }
   // }
 
-  // function handleAdd(e) {
-  //   const parentNode = e.target.parentNode;
-  //   const id = parentNode.getAttribute("listid");
-  //   const object = items.find(obj => obj.id == id);
-  //   if (shoppingCartList.length == 0) {
-  //     setShoppingCartList([object]);
-  //   }
-  //   else {
-  //     const newCart = [...shoppingCartList, object];
-  //     setShoppingCartList(newCart);
-  //   }
-  // }
 
   // function viewSingleItem(e) {
 
