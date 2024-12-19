@@ -1,5 +1,4 @@
 import { Rating } from "@mui/material"
-import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react";
 import NavBar from "./NavBar";
 
@@ -17,26 +16,17 @@ function Cards() {
         setItems(list);
       }
       fetchData();
-      console.log(items)
-    }, [filter]);
+    }, []);
 
     function handleAdd(e) {
-        const parentNode = e.target.parentNode;
-        const id = parentNode.getAttribute("listid");
-        const object = items.find(obj => obj.id == id);
-        if (shoppingCartList.length == 0) {
-          setShoppingCartList([object]);
-        }
-        else {
-          const newCart = [...shoppingCartList, object];
-          setShoppingCartList(newCart);
-        }
+
     }
 
     function handleFilter(e) {
-        setFilter(e.target.innerText.toLowerCase());
+
     }
 
+    console.log(items)
 
     return (
         <div className="navAndCards">
@@ -45,7 +35,7 @@ function Cards() {
                 shoppingCartList={shoppingCartList} 
             />
             <div className="cardsContainer">
-                {items.map((item) => {
+                {items.map((item) => (
                     <div key={item.id} className="singleCard">
                         <img className="cardImage" src={item.image} alt={item.title} />
                         <p className="cardTitle">{item.title}</p>
@@ -56,7 +46,7 @@ function Cards() {
                         </div>
                         <button onClick={handleAdd} className="cardAddButton">Add to Cart</button>
                     </div>
-                })}
+                ))}
             </div>
         </div>
     )
