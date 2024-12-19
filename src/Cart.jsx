@@ -5,7 +5,7 @@ function Cart() {
 
     return (
         <div className="INDACART">
-            <Link to="/">GO HOME</Link>
+            <Link to="/">GO BACK</Link>
             <h1>YOU IN DA CART</h1>
         </div>
     )

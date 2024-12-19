@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
 
-
+  const [shoppingCartList, setShoppingCartList] = useState([]);
 
   return (
     <div className="app">
@@ -17,8 +17,9 @@ function App() {
 
       <BrowserRouter>
         <Routes>
+            <Route path="/" element={<Cards shoppingCartList={shoppingCartList}
+            setShoppingCartList={setShoppingCartList} />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/" element={<Cards />} />
             {/* <Route path="/details/:id" element={<SingleItem />} /> */}
         </Routes>
       </BrowserRouter>
@@ -26,4 +27,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

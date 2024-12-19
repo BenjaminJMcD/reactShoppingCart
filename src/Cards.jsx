@@ -3,11 +3,12 @@ import { useState, useEffect } from "react";
 import NavBar from "./NavBar";
 
 
-function Cards() {
+function Cards({ shoppingCartList, setShoppingCartList }) {
+
 
     const [items, setItems] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
-    const [shoppingCartList, setShoppingCartList] = useState([]);
+
   
     useEffect(() => {
       const fetchData = async () => {
