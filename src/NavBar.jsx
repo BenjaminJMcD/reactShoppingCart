@@ -1,4 +1,5 @@
 import shoppingCartIcon from './assets/grocery-store.png';
+import { Link } from 'react-router-dom';
 
 function NavBar({ handleFilter, shoppingCartList }) {
 
@@ -13,10 +14,12 @@ function NavBar({ handleFilter, shoppingCartList }) {
               <p onClick={handleFilter}>Jewelry</p>
             </nav>
             <div className="shopIcon-Dynamic">
-              <img src={shoppingCartIcon} alt="Shopping Cart Image" className="shoppingCartImg" />
-              {shoppingCartList.length >0 &&
-              <p className="iconCounter">{shoppingCartList.length}</p>
-              }
+              <Link to="/cart">
+                  <img src={shoppingCartIcon} alt="Shopping Cart Image" className="shoppingCartImg" />
+                  {shoppingCartList.length >0 &&
+                  <p className="iconCounter">{shoppingCartList.length}</p>
+                  }
+              </Link>
             </div>
         </div>
     )
