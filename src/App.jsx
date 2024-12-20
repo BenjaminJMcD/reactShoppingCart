@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 function App() {
 
   const [shoppingCartList, setShoppingCartList] = useState([]);
+  const [items, setItems] = useState([]);
 
   return (
     <div className="app">
@@ -18,7 +19,9 @@ function App() {
       <BrowserRouter>
         <Routes>
             <Route path="/" element={<Cards shoppingCartList={shoppingCartList}
-            setShoppingCartList={setShoppingCartList} />} />
+            setShoppingCartList={setShoppingCartList}
+            items={items}
+            setItems={setItems} />} />
             <Route path="/cart" element={<Cart />} />
             {/* <Route path="/details/:id" element={<SingleItem />} /> */}
         </Routes>
@@ -27,4 +30,4 @@ function App() {
   )
 }
 
-export default App;
+export default App

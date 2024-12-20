@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 import NavBar from "./NavBar";
 
 
-function Cards({ shoppingCartList, setShoppingCartList }) {
+function Cards({ shoppingCartList, setShoppingCartList, items, setItems }) {
 
 
-    const [items, setItems] = useState([]);
+
     const [filteredProducts, setFilteredProducts] = useState([]);
 
   
