@@ -1,6 +1,7 @@
 import { Rating } from "@mui/material"
 import { useState, useEffect } from "react";
 import NavBar from "./NavBar";
+import { Link } from 'react-router-dom';
 
 
 function Cards({ shoppingCartList, setShoppingCartList, items, setItems }) {
@@ -62,7 +63,9 @@ function Cards({ shoppingCartList, setShoppingCartList, items, setItems }) {
             <div className="cardsContainer">
                 {filteredProducts.map((item) => (
                     <div listid={item.id} key={item.id} className="singleCard">
-                        <img className="cardImage" src={item.image} alt={item.title} />
+                        <Link to={`/details/${item.id}`}>
+                            <img className="cardImage" src={item.image} alt={item.title} />
+                        </Link>
                         <p className="cardTitle">{item.title}</p>
                         <p className="cardPrice">${item.price}</p>
                         <div className="starRatingContainer">

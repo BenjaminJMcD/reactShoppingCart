@@ -23,7 +23,7 @@ function App() {
             items={items}
             setItems={setItems} />} />
             <Route path="/cart" element={<Cart />} />
-            {/* <Route path="/details/:id" element={<SingleItem />} /> */}
+            <Route path="/details/:id" element={<SingleItem />} /> 
         </Routes>
       </BrowserRouter>
     </div>
