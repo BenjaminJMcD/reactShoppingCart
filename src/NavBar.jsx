@@ -3,15 +3,22 @@ import { Link } from 'react-router-dom';
 
 export default function NavBar({ handleFilter, shoppingCartList }) {
 
-
-
     return (
         <div className="navbar">
             <nav>
-              <p onClick={handleFilter}>Electronics</p>
-              <p onClick={handleFilter}>Men's Apparel</p>
-              <p onClick={handleFilter}>Women's Apparel</p>
-              <p onClick={handleFilter}>Jewelry</p>
+                <Link to="/">
+                    <p onClick={handleFilter}>Electronics</p>
+                </Link>
+                <Link to="/">
+                    <p onClick={handleFilter}>Men's Apparel</p>
+                </Link>
+                <Link to="/">
+                    <p onClick={handleFilter}>Women's Apparel</p>
+                </Link>
+                <Link to="/">
+                    <p onClick={handleFilter}>Jewelry</p>
+                </Link>
+
             </nav>
             <div className="shopIcon-Dynamic">
               <Link to="/cart">
