@@ -3,7 +3,7 @@ import Cards from './Cards';
 import SingleItem from './SingleItem';
 import Cart from './Cart';
 import NavBar from './NavBar';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 
 function App() {
@@ -42,6 +42,10 @@ function App() {
     }
   }
 
+  function resetFilter() {
+    setFilteredProducts(items);
+  }
+
   function handleAdd(e) {
     const parentNode = e.target.parentNode;
     const id = parentNode.getAttribute("listid");
@@ -57,14 +61,16 @@ function App() {
 
   return (
     <div className="app">
-      <div className="header">
-        <h1 className="title">FANCY SHOPS</h1>
-      </div>
       <BrowserRouter>
-      <NavBar
-        handleFilter = {handleFilter}
-        shoppingCartList={shoppingCartList} 
-      />
+        <Link className="styledLink" to="/">
+          <div onClick={resetFilter} className="header">
+            <h1 className="title">FANCY SHOPS</h1>
+          </div>
+        </Link>
+        <NavBar
+          handleFilter = {handleFilter}
+          shoppingCartList={shoppingCartList} 
+        />
         <Routes>
             <Route path="/" element={
               <Cards 

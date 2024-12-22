@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { Link } from 'react-router-dom';
 
 
-export default function Cards({ filteredProducts, handleAdd }) {
+function Cards({ filteredProducts, handleAdd }) {
   
 
 
@@ -31,3 +31,4 @@ export default function Cards({ filteredProducts, handleAdd }) {
     )
 }
 
+export default Cards

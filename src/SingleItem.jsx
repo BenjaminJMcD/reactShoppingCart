@@ -4,7 +4,7 @@ import { Rating } from "@mui/material";
 import NavBar from "./NavBar";
 
 
-export default function SingleItem({ shoppingCartList, setShoppingCartList }) {
+function SingleItem({ shoppingCartList, setShoppingCartList }) {
 
     const { id } = useParams();
     const [product, setProduct] = useState({});
@@ -27,6 +27,7 @@ export default function SingleItem({ shoppingCartList, setShoppingCartList }) {
         for (let i=0; i<amount; i++) {
             let newCart = shoppingCartList
             newCart.push(product);
+            setShoppingCartList(newCart);
         }
         console.log(shoppingCartList);
     }
@@ -58,3 +59,5 @@ export default function SingleItem({ shoppingCartList, setShoppingCartList }) {
         </div>
     )
 }
+
+export default SingleItem;
