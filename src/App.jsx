@@ -5,7 +5,7 @@ import Cart from './Cart';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
-function App() {
+export default function App() {
 
   const [shoppingCartList, setShoppingCartList] = useState([]);
   const [items, setItems] = useState([]);
@@ -22,12 +22,12 @@ function App() {
             setShoppingCartList={setShoppingCartList}
             items={items}
             setItems={setItems} />} />
+            <Route path="/details/:id" element={<SingleItem
+            shoppingCartList={shoppingCartList}
+            setShoppingCartList={setShoppingCartList}/>} /> 
             <Route path="/cart" element={<Cart />} />
-            <Route path="/details/:id" element={<SingleItem />} /> 
         </Routes>
       </BrowserRouter>
     </div>
   )
 }
-
-export default App

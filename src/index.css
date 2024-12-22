@@ -87,3 +87,27 @@ nav {
   align-items: center;
   justify-content: center;
 }
+
+/* SINGLE ITEM */
+
+.singleItemContainer {
+  width: 70vw;
+  height: 80vh;
+  align-content: center;
+  text-align: center;
+  margin-top: 40px;
+  margin-left: 12%;
+  border: 10px black solid;
+  border-radius: 20px;
+  box-shadow: 10px 10px gray;
+}
+
+.singleImage {
+  height: 300px;
+}
+
+.singleDescript {
+  width: 70%;
+  text-align: center;
+  margin: auto;
+}

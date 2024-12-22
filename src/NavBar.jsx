@@ -1,7 +1,7 @@
 import shoppingCartIcon from './assets/grocery-store.png';
 import { Link } from 'react-router-dom';
 
-function NavBar({ handleFilter, shoppingCartList }) {
+export default function NavBar({ handleFilter, shoppingCartList }) {
 
 
 
@@ -24,5 +24,3 @@ function NavBar({ handleFilter, shoppingCartList }) {
         </div>
     )
 }
-
-export default NavBar;

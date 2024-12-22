@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 
-function Cart() {
+export default function Cart() {
 
     return (
         <div className="INDACART">
@@ -10,5 +10,3 @@ function Cart() {
         </div>
     )
 }
-
-export default Cart;

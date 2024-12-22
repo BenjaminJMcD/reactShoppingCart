@@ -4,7 +4,7 @@ import NavBar from "./NavBar";
 import { Link } from 'react-router-dom';
 
 
-function Cards({ shoppingCartList, setShoppingCartList, items, setItems }) {
+export default function Cards({ shoppingCartList, setShoppingCartList, items, setItems }) {
 
 
 
@@ -74,10 +74,9 @@ function Cards({ shoppingCartList, setShoppingCartList, items, setItems }) {
                         </div>
                         <button onClick={handleAdd} className="cardAddButton">Add to Cart</button>
                     </div>
-                ))}
+                ))}{ }
             </div>
         </div>
     )
 }
 
-export default Cards;
