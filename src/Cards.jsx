@@ -1,13 +1,9 @@
 import { Rating } from "@mui/material"
-import { useEffect } from "react";
 import { Link } from 'react-router-dom';
 
 
 function Cards({ filteredProducts, handleAdd }) {
   
-
-
-
 
     return (
         <div className="navAndCards">
@@ -31,4 +27,4 @@ function Cards({ filteredProducts, handleAdd }) {
     )
 }
 
-export default Cards
+export default Cards;

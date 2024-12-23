@@ -46,18 +46,30 @@ function App() {
     setFilteredProducts(items);
   }
 
-  function handleAdd(e) {
+  function handleAdd(e, number) {
     const parentNode = e.target.parentNode;
     const id = parentNode.getAttribute("listid");
     const object = items.find(obj => obj.id == id);
+    const newObj = {...object, count: 1}
+    const findObject = shoppingCartList.find(obj => obj.id == id)
+    
     if (shoppingCartList.length == 0) {
-      setShoppingCartList([object]);
+      setShoppingCartList([newObj]);
+    }
+    else if (shoppingCartList.includes(findObject)) {
+      setShoppingCartList((prevItems) =>
+        prevItems.map((item) => (
+          item.id == id ? {...item, count: item.count+1 } : item
+        ))  
+      )
     }
     else {
-      const newCart = [...shoppingCartList, object];
+      const newCart = [...shoppingCartList, newObj];
       setShoppingCartList(newCart);
     }
 }
+
+console.log(shoppingCartList)
 
   return (
     <div className="app">
@@ -86,6 +98,8 @@ function App() {
             /> 
             <Route path="/cart" element={
               <Cart 
+                shoppingCartList={shoppingCartList}
+                setShoppingCartList={setShoppingCartList}
               />} 
             />
         </Routes>
@@ -94,4 +108,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

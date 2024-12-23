@@ -116,3 +116,10 @@ nav {
   text-align: center;
   margin: auto;
 }
+
+
+/* CART */
+
+.cartImage {
+  height: 200px;
+}
