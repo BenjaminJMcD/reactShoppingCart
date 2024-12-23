@@ -69,7 +69,8 @@ function App() {
     }
 }
 
-console.log(shoppingCartList)
+const total = shoppingCartList.reduce((accumulator, curr) => accumulator + curr.count, 0);
+
 
   return (
     <div className="app">
@@ -81,7 +82,8 @@ console.log(shoppingCartList)
         </Link>
         <NavBar
           handleFilter = {handleFilter}
-          shoppingCartList={shoppingCartList} 
+          shoppingCartList={shoppingCartList}
+          total={total}
         />
         <Routes>
             <Route path="/" element={
