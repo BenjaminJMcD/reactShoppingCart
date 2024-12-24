@@ -71,6 +71,15 @@ function App() {
 
 const total = shoppingCartList.reduce((accumulator, curr) => accumulator + curr.count, 0);
 
+function updateAmount(e) {
+  let value = e.target.value;
+
+  
+
+
+
+}
+
 
   return (
     <div className="app">
@@ -102,6 +111,7 @@ const total = shoppingCartList.reduce((accumulator, curr) => accumulator + curr.
               <Cart 
                 shoppingCartList={shoppingCartList}
                 setShoppingCartList={setShoppingCartList}
+                total={total}
               />} 
             />
         </Routes>
