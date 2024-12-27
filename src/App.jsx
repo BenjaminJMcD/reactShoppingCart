@@ -67,18 +67,47 @@ function App() {
       const newCart = [...shoppingCartList, newObj];
       setShoppingCartList(newCart);
     }
-}
+  }
 
-const total = shoppingCartList.reduce((accumulator, curr) => accumulator + curr.count, 0);
+  const total = shoppingCartList.reduce((accumulator, curr) => accumulator + curr.count, 0);
 
-function updateAmount(e) {
-  let value = e.target.value;
+  function updateAmount(e) {
+    let value = e.target.value;
 
-  
+  }
 
 
 
-}
+
+  function add(e) {
+    let id = e.target.parentNode.parentNode.getAttribute("listid");
+    setShoppingCartList((prevItems) =>
+      prevItems.map((item) => (
+        item.id == id ? {...item, count: item.count+1 } : item
+    )))  
+
+    // UPDATE COUNT IN SHOPPINGCARTLIST
+
+
+  }
+
+  function subtract(e) {
+    let id = e.target.parentNode.parentNode.getAttribute("listid");
+    setShoppingCartList((prevItems) =>
+      prevItems.map((item) => (
+        item.id == id ? {...item, count: item.count-1 } : item
+    )))  
+  }
+
+  function handleChange(e) {
+    window.location.reload();
+
+    // RELOAD PAGE
+
+  }
+
+  console.log(shoppingCartList)
+
 
 
   return (
@@ -112,12 +141,15 @@ function updateAmount(e) {
                 shoppingCartList={shoppingCartList}
                 setShoppingCartList={setShoppingCartList}
                 total={total}
+                add={add}
+                subtract={subtract}
+                handleChange={handleChange}
               />} 
             />
         </Routes>
       </BrowserRouter>
     </div>
   )
-}
+};
 
 export default App;

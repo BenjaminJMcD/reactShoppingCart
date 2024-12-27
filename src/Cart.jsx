@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Rating } from "@mui/material";
 
 
-function Cart({ shoppingCartList, setShoppingCartList }) {
+function Cart({ shoppingCartList, setShoppingCartList, total, handleChange, add, subtract }) {
 
 
 
@@ -21,13 +21,14 @@ function Cart({ shoppingCartList, setShoppingCartList }) {
                         <Rating name='half-rating-read' defaultValue={item.rating.rate} precision={0.1} readOnly />
                         <p className="ratingCount">{item.rating.count}</p>
                     </div>
-                    <div className="cartIncrementer">
-                        <button className="cartMinusBtn incrementerBtn">-</button>
-                        <input type="numerical" className="cartAmountInput" 
+                    <div className="incrementer">
+                        <button className="minusBtn incrementerBtn" onClick={subtract}>-</button>
+                        <input type="numerical" className="amountInput" 
                         value={item.count}
                         min="1"
+                        onChange={handleChange}
                         />
-                        <button className="cartPlusBtn incrementerBtn">+</button>
+                        <button className="plusBtn incrementerBtn" onClick={add}>+</button>
                     </div>
 
                     <button className="cartRemove">Remove Item</button>
@@ -35,6 +36,6 @@ function Cart({ shoppingCartList, setShoppingCartList }) {
             ))}
         </div>
     )
-}
+};
 
 export default Cart;

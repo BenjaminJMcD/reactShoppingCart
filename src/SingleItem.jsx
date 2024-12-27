@@ -46,12 +46,14 @@ function SingleItem({ shoppingCartList, setShoppingCartList }) {
                         <p className="ratingCount">{product.rating.count}</p>
                     </div>
                     <div className="singleInputAddContainer">
-                        <input className="singleCartInput"
-                        type="number"
-                        placeholder="1"
-                        min="1" 
-                        inputMode="numeric" 
-                        />
+                        <div className="incrementer">
+                            <button className="minusBtn incrementerBtn">-</button>
+                            <input type="numerical" className="cartAmountInput" 
+                            placeholder="1"
+                            min="1"
+                            />
+                            <button className="plusBtn incrementerBtn">+</button>
+                        </div>
                         <button onClick={handleAdd} className="cardAddButton">Add to Cart</button>  
                     </div>
                 </>
@@ -60,4 +62,4 @@ function SingleItem({ shoppingCartList, setShoppingCartList }) {
     )
 }
 
-export default SingleItem;
+export default SingleItem
