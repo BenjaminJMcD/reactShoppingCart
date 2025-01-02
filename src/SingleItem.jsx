@@ -4,7 +4,7 @@ import { Rating } from "@mui/material";
 import NavBar from "./NavBar";
 
 
-function SingleItem({ shoppingCartList, setShoppingCartList }) {
+function SingleItem({ shoppingCartList, setShoppingCartList, handleAddMultiple }) {
 
     const { id } = useParams();
     const [product, setProduct] = useState({});
@@ -19,17 +19,21 @@ function SingleItem({ shoppingCartList, setShoppingCartList }) {
         fetchProduct();
       }, [id]);
 
-    function handleAdd(e) {
-        let amount = e.target.parentNode.firstChild.value;
-        if (amount == "") {
-            amount = 1;
+
+
+    function incrementUp() {
+        let input = document.getElementById("inputAmount");
+        let amount = parseInt(input.value);
+        input.value = amount+1;
+        console.log(amount);
+    }
+
+    function incrementDown() {
+        let input = document.getElementById("inputAmount");
+        let amount = parseInt(input.value);
+        if (amount > 0) {
+            input.value = amount-1
         }
-        for (let i=0; i<amount; i++) {
-            let newCart = shoppingCartList
-            newCart.push(product);
-            setShoppingCartList(newCart);
-        }
-        console.log(shoppingCartList);
     }
 
     return (
@@ -45,16 +49,16 @@ function SingleItem({ shoppingCartList, setShoppingCartList }) {
                         <Rating name='half-rating-read' defaultValue={product.rating.rate} precision={0.1} readOnly />
                         <p className="ratingCount">{product.rating.count}</p>
                     </div>
-                    <div className="singleInputAddContainer">
+                    <div listid={product.id} className="singleInputAddContainer">
                         <div className="incrementer">
-                            <button className="minusBtn incrementerBtn">-</button>
-                            <input type="numerical" className="cartAmountInput" 
-                            placeholder="1"
+                            <button onClick={incrementDown} className="minusBtn incrementerBtn">-</button>
+                            <input id="inputAmount" type="numerical" className="amountInput" 
                             min="1"
+                            defaultValue="1"
                             />
-                            <button className="plusBtn incrementerBtn">+</button>
+                            <button onClick={incrementUp} className="plusBtn incrementerBtn">+</button>
                         </div>
-                        <button onClick={handleAdd} className="cardAddButton">Add to Cart</button>  
+                        <button onClick={handleAddMultiple} className="cardAddButton">Add to Cart</button>  
                     </div>
                 </>
             )}

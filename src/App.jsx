@@ -46,7 +46,8 @@ function App() {
     setFilteredProducts(items);
   }
 
-  function handleAdd(e, number) {
+  function handleAdd(e) {
+
     const parentNode = e.target.parentNode;
     const id = parentNode.getAttribute("listid");
     const object = items.find(obj => obj.id == id);
@@ -69,13 +70,28 @@ function App() {
     }
   }
 
-  const total = shoppingCartList.reduce((accumulator, curr) => accumulator + curr.count, 0);
+  function handleAddMultiple(e) {
+    // GET AMOUNT VIA INPUT
+    let input = document.getElementById("inputAmount");
+    let amount = parseInt(input.value);
+    let id = e.target.parentNode.getAttribute("listid");
+    let object = items.find(obj => obj.id == id);
+    let newObj = {...object, count: amount}
+    let findObject = shoppingCartList.find(obj => obj.id == id);
 
-  function updateAmount(e) {
-    let value = e.target.value;
-
-  }
-
+    // ADDS AMOUNT INSTEAD OF 1
+    if (shoppingCartList.includes(findObject)) {
+        setShoppingCartList((prevItems) => 
+            prevItems.map((item) => (
+                item.id == id ? {...item, count: item.count+amount} : item
+            ))
+        )
+    }
+    else {
+        let newCart = [...shoppingCartList, newObj];
+        setShoppingCartList(newCart);
+    }
+}
 
 
 
@@ -84,29 +100,28 @@ function App() {
     setShoppingCartList((prevItems) =>
       prevItems.map((item) => (
         item.id == id ? {...item, count: item.count+1 } : item
-    )))  
-
-    // UPDATE COUNT IN SHOPPINGCARTLIST
-
-
-  }
+      ))
+    )  
+  };
 
   function subtract(e) {
     let id = e.target.parentNode.parentNode.getAttribute("listid");
     setShoppingCartList((prevItems) =>
       prevItems.map((item) => (
         item.id == id ? {...item, count: item.count-1 } : item
-    )))  
-  }
+      ))
+    )  
+  };
 
-  function handleChange(e) {
+  function handleChange() {
     window.location.reload();
-
-    // RELOAD PAGE
-
   }
 
-  console.log(shoppingCartList)
+
+
+
+
+  const total = shoppingCartList.reduce((accumulator, curr) => accumulator + curr.count, 0);
 
 
 
@@ -134,6 +149,7 @@ function App() {
               <SingleItem
                 shoppingCartList={shoppingCartList}
                 setShoppingCartList={setShoppingCartList}
+                handleAddMultiple={handleAddMultiple}
               />}
             /> 
             <Route path="/cart" element={
