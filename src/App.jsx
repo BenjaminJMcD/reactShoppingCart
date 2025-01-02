@@ -120,9 +120,15 @@ function App() {
     return item.price.toFixed(2);
   }
 
-
-
   const total = shoppingCartList.reduce((accumulator, curr) => accumulator + curr.count, 0);
+
+  function removeItem(e) {
+    let id = e.target.parentNode.getAttribute("listid");
+    let newArray = shoppingCartList.filter(function(item) {
+      return item.id != id
+    })
+    setShoppingCartList(newArray);
+  }
 
 
 
@@ -164,6 +170,7 @@ function App() {
                 subtract={subtract}
                 handleChange={handleChange}
                 formatPrice={formatPrice}
+                removeItem={removeItem}
               />} 
             />
         </Routes>

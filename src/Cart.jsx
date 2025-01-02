@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Rating } from "@mui/material";
 
 
-function Cart({ shoppingCartList, handleChange, add, subtract, formatPrice }) {
+function Cart({ shoppingCartList, handleChange, add, subtract, formatPrice, removeItem }) {
 
 
     function formatSubtotal(item) {
@@ -17,6 +17,8 @@ function Cart({ shoppingCartList, handleChange, add, subtract, formatPrice }) {
 
     let GrandTotal = grandTotal();
 
+
+
     return (
         <div className="cartItemsContainer">
             <Link className="styledLink" to="/">GO BACK</Link>
@@ -30,19 +32,26 @@ function Cart({ shoppingCartList, handleChange, add, subtract, formatPrice }) {
                         <p className="ratingCount">{item.rating.count}</p>
                     </div>
                     <div className="incrementer">
-                        <button className="minusBtn incrementerBtn" 
+                        <button 
+                            className="minusBtn incrementerBtn" 
                             onClick={subtract}>-</button>
-                        <input type="numerical" className="amountInput" 
+                        <input 
+                            type="numerical" 
+                            className="amountInput" 
                             value={item.count}
                             onChange={handleChange}
                         />
-                        <button className="plusBtn incrementerBtn" onClick={add}>+</button>
+                        <button 
+                            className="plusBtn incrementerBtn" 
+                            onClick={add}>+</button>
                     </div>
                     <div className="subTotal">
                         <h1>${formatSubtotal(item)}</h1>
                     </div>
-                    <button className="cartRemove">
-                        Remove Item(s)
+                    <button 
+                        className="cartRemove"
+                        onClick={removeItem}>
+                            Remove Item(s)
                     </button>
                 </div>
             ))}
@@ -54,8 +63,6 @@ function Cart({ shoppingCartList, handleChange, add, subtract, formatPrice }) {
 export default Cart;
 
 /* ------ TO DO --------
-
-- REMOVE ALL BUTTON REMOVES ITEM FROM SHOPPINGLISTCART W POPUP MODAL "ARE YOU SURE"
 
 - SHOPPINGCARTLIST STORED IN LOCAL STORAGE
 
