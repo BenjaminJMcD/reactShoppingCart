@@ -4,7 +4,7 @@ import { Rating } from "@mui/material";
 import NavBar from "./NavBar";
 
 
-function SingleItem({ shoppingCartList, setShoppingCartList, handleAddMultiple }) {
+function SingleItem({ handleAddMultiple, formatPrice }) {
 
     const { id } = useParams();
     const [product, setProduct] = useState({});
@@ -44,7 +44,7 @@ function SingleItem({ shoppingCartList, setShoppingCartList, handleAddMultiple }
                     <h1 className="singleTitle">{product.title}</h1>
                     <img className="singleImage" src={product.image} alt={product.title} />
                     <p className="singleDescript">{product.description}</p>
-                    <p className="singlePrice">${product.price}</p>
+                    <p className="singlePrice">${formatPrice(product)}</p>
                     <div className="starRatingContainer">
                         <Rating name='half-rating-read' defaultValue={product.rating.rate} precision={0.1} readOnly />
                         <p className="ratingCount">{product.rating.count}</p>

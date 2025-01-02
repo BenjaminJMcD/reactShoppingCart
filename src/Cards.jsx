@@ -2,7 +2,7 @@ import { Rating } from "@mui/material"
 import { Link } from 'react-router-dom';
 
 
-function Cards({ filteredProducts, handleAdd }) {
+function Cards({ filteredProducts, handleAdd, formatPrice }) {
   
 
     return (
@@ -14,7 +14,7 @@ function Cards({ filteredProducts, handleAdd }) {
                             <img className="cardImage" src={item.image} alt={item.title} />
                         </Link>
                         <p className="cardTitle">{item.title}</p>
-                        <p className="cardPrice">${item.price}</p>
+                        <p className="cardPrice">${formatPrice(item)}</p>
                         <div className="starRatingContainer">
                             <Rating name='half-rating-read' defaultValue={item.rating.rate} precision={0.1} readOnly />
                             <p className="ratingCount">{item.rating.count}</p>

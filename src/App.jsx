@@ -93,8 +93,6 @@ function App() {
     }
 }
 
-
-
   function add(e) {
     let id = e.target.parentNode.parentNode.getAttribute("listid");
     setShoppingCartList((prevItems) =>
@@ -106,9 +104,10 @@ function App() {
 
   function subtract(e) {
     let id = e.target.parentNode.parentNode.getAttribute("listid");
+
     setShoppingCartList((prevItems) =>
       prevItems.map((item) => (
-        item.id == id ? {...item, count: item.count-1 } : item
+        item.id == id && item.count > 1 ? {...item, count: item.count-1 } : item
       ))
     )  
   };
@@ -117,7 +116,9 @@ function App() {
     window.location.reload();
   }
 
-
+  function formatPrice(item) {
+    return item.price.toFixed(2);
+  }
 
 
 
@@ -142,7 +143,8 @@ function App() {
             <Route path="/" element={
               <Cards 
                 filteredProducts={filteredProducts}
-                handleAdd={handleAdd} 
+                handleAdd={handleAdd}
+                formatPrice={formatPrice}
               />} 
             />
             <Route path="/details/:id" element={
@@ -150,6 +152,7 @@ function App() {
                 shoppingCartList={shoppingCartList}
                 setShoppingCartList={setShoppingCartList}
                 handleAddMultiple={handleAddMultiple}
+                formatPrice={formatPrice}
               />}
             /> 
             <Route path="/cart" element={
@@ -160,6 +163,7 @@ function App() {
                 add={add}
                 subtract={subtract}
                 handleChange={handleChange}
+                formatPrice={formatPrice}
               />} 
             />
         </Routes>
@@ -168,4 +172,4 @@ function App() {
   )
 };
 
-export default App;
+export default App
