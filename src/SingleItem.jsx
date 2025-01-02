@@ -1,7 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import { Rating } from "@mui/material";
-import NavBar from "./NavBar";
 
 
 function SingleItem({ handleAddMultiple, formatPrice }) {
@@ -25,7 +24,6 @@ function SingleItem({ handleAddMultiple, formatPrice }) {
         let input = document.getElementById("inputAmount");
         let amount = parseInt(input.value);
         input.value = amount+1;
-        console.log(amount);
     }
 
     function incrementDown() {
