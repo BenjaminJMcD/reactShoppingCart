@@ -9,7 +9,11 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 function App() {
 
-  const [shoppingCartList, setShoppingCartList] = useState([]);
+  const [shoppingCartList, setShoppingCartList] = useState(() => {
+    const storedList = localStorage.getItem('cart');
+    return storedList ? JSON.parse(storedList) : [];
+  });
+
   const [items, setItems] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
@@ -22,6 +26,11 @@ function App() {
     }
     fetchData();
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(shoppingCartList));
+  }, [shoppingCartList])
+
 
   function handleFilter(e) {
     let filter = e.target.innerText.toLowerCase();
