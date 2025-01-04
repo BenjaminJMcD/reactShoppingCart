@@ -3,6 +3,7 @@ import Cards from './Cards';
 import SingleItem from './SingleItem';
 import Cart from './Cart';
 import NavBar from './NavBar';
+import EmptyCart from './EmptyCart';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 
@@ -161,6 +162,7 @@ function App() {
                 formatPrice={formatPrice}
               />}
             /> 
+            {shoppingCartList.length > 0 ? (
             <Route path="/cart" element={
               <Cart 
                 shoppingCartList={shoppingCartList}
@@ -173,6 +175,9 @@ function App() {
                 removeItem={removeItem}
               />} 
             />
+            ): <Route path="/cart" element={
+                <EmptyCart/>}
+              />}
         </Routes>
       </BrowserRouter>
     </div>
