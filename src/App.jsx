@@ -16,13 +16,16 @@ function App() {
 
   const [items, setItems] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     const fetchData = async () => {
       const response = await fetch('https://fakestoreapi.com/products')
       const list = await response.json();
       setItems(list);
       setFilteredProducts(list);
+      setLoading(false);
     }
     fetchData();
   }, []);
@@ -141,6 +144,9 @@ function App() {
   }
 
 
+  console.log(loading);
+
+
 
   return (
     <div className="app">
@@ -156,13 +162,19 @@ function App() {
           total={total}
         />
         <Routes>
-            <Route path="/" element={
-              <Cards 
-                filteredProducts={filteredProducts}
-                handleAdd={handleAdd}
-                formatPrice={formatPrice}
-              />} 
-            />
+            {loading ? (
+              <Route path="/" element={
+                <h1>LOADING</h1>
+              }
+              />
+            ): <Route path="/" element={
+                <Cards 
+                  filteredProducts={filteredProducts}
+                  handleAdd={handleAdd}
+                  formatPrice={formatPrice}
+                />}
+              />
+            }
             <Route path="/details/:id" element={
               <SingleItem
                 shoppingCartList={shoppingCartList}
@@ -170,7 +182,7 @@ function App() {
                 handleAddMultiple={handleAddMultiple}
                 formatPrice={formatPrice}
               />}
-            /> 
+            />
             {shoppingCartList.length > 0 ? (
             <Route path="/cart" element={
               <Cart 

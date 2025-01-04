@@ -7,17 +7,18 @@ function SingleItem({ handleAddMultiple, formatPrice }) {
 
     const { id } = useParams();
     const [product, setProduct] = useState({});
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        setLoading(true);
         const fetchProduct = async () => {
           const response = await fetch(`https://fakestoreapi.com/products/${id}`);
           const data = await response.json();
           setProduct(data);
-        };
-    
+          setLoading(false);
+        }
         fetchProduct();
       }, [id]);
-
 
 
     function incrementUp() {
@@ -34,11 +35,13 @@ function SingleItem({ handleAddMultiple, formatPrice }) {
         }
     }
 
+    console.log(loading);
     return (
         <div className="singleItemContainer">
             <Link to="/">Back</Link>
-            {product.title && (
-                <>
+            {loading ? (
+                <h1>LOADING</h1>
+                ) : <>
                     <h1 className="singleTitle">{product.title}</h1>
                     <img className="singleImage" src={product.image} alt={product.title} />
                     <p className="singleDescript">{product.description}</p>
@@ -59,9 +62,9 @@ function SingleItem({ handleAddMultiple, formatPrice }) {
                         <button onClick={handleAddMultiple} className="cardAddButton">Add to Cart</button>  
                     </div>
                 </>
-            )}
+            }
         </div>
     )
 }
 
-export default SingleItem
+export default SingleItem;

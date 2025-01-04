@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 function Cards({ filteredProducts, handleAdd, formatPrice }) {
   
 
+
+
     return (
         <div className="navAndCards">
             <div className="cardsContainer">
