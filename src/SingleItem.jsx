@@ -35,7 +35,6 @@ function SingleItem({ handleAddMultiple, formatPrice }) {
         }
     }
 
-    console.log(loading);
     return (
         <div className="singleItemContainer">
             <Link to="/">Back</Link>
