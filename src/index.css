@@ -1,42 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* HEADING + NAV BAR + SHOPPING ICON */
 
-.styledLink {
-  text-decoration: none;
-  color: black;
-}
-
-.header {
-  background-color: rgb(129, 150, 94);
-  height: 120px;
-  padding-top: 38px;
-}
-
-.title {
-  font-size: 72px;
-  text-align: center;
-  margin-top: 0px;
-  margin-bottom: 0px;
-
-}
-
-/* NAV BAR */
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  width: 100vw;
-  margin-left: 20%;
-  margin-right: 22%;
-  border-bottom: black 1px solid;
-}
-
-.navbar {
-  width: 100vw;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  display: inline-flex;
-}
 
 .shoppingCartImg {
   width: 40px;

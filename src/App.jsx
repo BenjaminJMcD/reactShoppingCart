@@ -143,17 +143,12 @@ function App() {
     setShoppingCartList(newArray);
   }
 
-
-  console.log(loading);
-
-
-
   return (
     <div className="app">
       <BrowserRouter>
-        <Link className="styledLink" to="/">
-          <div onClick={resetFilter} className="header">
-            <h1 className="title">FANCY SHOPS</h1>
+        <Link className="no-underline text-black" to="/">
+          <div onClick={resetFilter} className="bg-green-400 h-36 pt-9">
+            <h1 className="text-7xl text-center my-0">FANCY SHOPS</h1>
           </div>
         </Link>
         <NavBar
@@ -205,4 +200,4 @@ function App() {
   )
 };
 
-export default App;
+export default App
