@@ -4,13 +4,44 @@
 
 
 
-.shoppingCartImg {
+/* HEADING + NAV BAR + SHOPPING ICON */
+
+/* .styledLink {
+  text-decoration: none;
+  color: black;
+}
+
+.header {
+  background-color: rgb(129, 150, 94);
+  height: 120px;
+  padding-top: 38px;
+} */
+
+/* .title {
+  font-size: 72px;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+
+} */
+
+/* NAV BAR */
+
+
+/* .navbar {
+  width: 100vw;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  display: inline-flex;
+} */
+
+/* .shoppingCartImg {
   width: 40px;
   height: 40px;
   position: absolute;
   right: 50px;
   margin-top: 10px;
-}
+} */
 
 .iconCounter {
   width: 20px;
@@ -37,6 +68,10 @@
 .cardImage {
   height: 200px;
   width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .singleCard {
@@ -49,8 +84,12 @@
 }
 
 .cardAddButton {
+  margin-top: 15px;
   width: 100px;
   height: 40px;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 2px 2px;
 }
 
 .starRatingContainer {
@@ -119,6 +158,14 @@
   font-size: 18px;
   text-align: center;
   border: none;
+}
+
+.cartRemove {
+  margin: 15px;
+  border: black 1px solid;
+  padding: 5px;
+  background-color: gray;
+  border-radius: 10px;
 }
 
 strong {
