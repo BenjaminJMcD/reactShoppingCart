@@ -148,7 +148,7 @@ function App() {
       <BrowserRouter>
         <Link className="no-underline text-black" to="/">
           <div onClick={resetFilter} className="bg-green-400 h-32 pt-9">
-            <h1 className="text-7xl text-center my-0">FANCY SHOPS</h1>
+            <h1 className="text-7xl text-center my-0 pl-4">FANCY SHOPS</h1>
           </div>
         </Link>
         <NavBar
