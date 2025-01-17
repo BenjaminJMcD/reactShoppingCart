@@ -43,7 +43,7 @@
   margin-top: 10px;
 } */
 
-.iconCounter {
+/* .iconCounter {
   width: 20px;
   height: 19px;
   font-weight: bold;
@@ -55,33 +55,33 @@
   background-color: white;
   border: black 3px solid;
   border-radius: 100px;
-}
+} */
 
 /* CARDS */
 
-.cardsContainer {
+/* .cardsContainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
-}
+} */
 
-.cardImage {
+/* .cardImage {
   height: 200px;
   width: 200px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
   margin-top: 20px;
-}
+} */
 
-.singleCard {
+/* .singleCard {
   text-align: center;
   margin: 40px;
   border: 1px solid black;
   border-radius: 10px;
   box-shadow: 10px 10px 10px;
   padding: 10px;
-}
+} */
 
 .cardAddButton {
   margin-top: 15px;
@@ -92,11 +92,11 @@
   box-shadow: 2px 2px;
 }
 
-.starRatingContainer {
+/* .starRatingContainer {
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
 /* SINGLE ITEM */
 
