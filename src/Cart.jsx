@@ -60,11 +60,4 @@ function Cart({ shoppingCartList, handleChange, add, subtract, formatPrice, remo
     )
 };
 
-export default Cart;
-
-/* ------ TO DO --------
-
-- SHOPPINGCARTLIST STORED IN LOCAL STORAGE
-
-
-*/ 
+export default Cart

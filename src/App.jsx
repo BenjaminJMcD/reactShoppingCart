@@ -9,6 +9,8 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 function App() {
 
+  //localStorage.clear();
+
   const [shoppingCartList, setShoppingCartList] = useState(() => {
     const storedList = localStorage.getItem('cart');
     return storedList ? JSON.parse(storedList) : [];
@@ -200,4 +202,8 @@ function App() {
   )
 };
 
-export default App;
+export default App
+
+// -----------BUG -----------
+
+// ADD ITEM ONLY ADDING COUNT - NOT ADDING ITEM INFO

@@ -25,11 +25,11 @@ function Cards({ filteredProducts, handleAdd, formatPrice }) {
                         <Link to={`/details/${item.id}`}>
                             <p className="font-bold pt-8 pl-9">${formatPrice(item)}</p>
                         </Link>
-                        <div className="pt-5">
+                        <div listid={item.id} className="pt-5">
                             <button onClick={handleAdd} className="bg-gray-200 hover:bg-gray-300 h-[36px] py-1 border border-black p-2 rounded-xl shadow">Add to Cart</button>
                         </div>
                     </div>
-                ))}{ }
+                ))}
             </div>
         </div>
     )
