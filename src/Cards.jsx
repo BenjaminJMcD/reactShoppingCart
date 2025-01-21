@@ -8,8 +8,8 @@ function Cards({ filteredProducts, handleAdd, formatPrice }) {
 
 
     return (
-        <div className="mx-auto">
-            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="flex flex-col items-center justify-center min-h-screen">
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 place-items-center max-w-7xl">
                 {filteredProducts.map((item) => (
                     <div listid={item.id} key={item.id} className="w-[450px] h-[250px] grid grid-cols-4 grid-rows-4 border border-black rounded-xl p-3 hover:shadow-2xl">
                         <Link to={`/details/${item.id}`} className="col-span-2 row-span-4">
@@ -35,4 +35,4 @@ function Cards({ filteredProducts, handleAdd, formatPrice }) {
     )
 }
 
-export default Cards
+export default Cards;

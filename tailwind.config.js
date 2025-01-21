@@ -4,7 +4,15 @@ export default {
     "./src/*.jsx",
     "./index.html"],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        md: '1011px',
+        lg: '1480px',
+      },
+      maxWidth: {
+        '7xl': '1450px',
+      },
+    },
   },
   plugins: [],
 }
