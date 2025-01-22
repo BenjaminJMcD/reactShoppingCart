@@ -16,6 +16,7 @@ function App() {
     return storedList ? JSON.parse(storedList) : [];
   });
 
+
   const [items, setItems] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [loading, setLoading] = useState(true);
