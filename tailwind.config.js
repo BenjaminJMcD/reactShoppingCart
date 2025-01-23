@@ -4,6 +4,13 @@ export default {
     "./src/*.jsx",
     "./index.html"],
   theme: {
+    colors: {
+      'black': '#0a0908',
+      'navy': '#22333b',
+      'white': '#f2f4f3',
+      'tan': '#a9927d',
+      'brown': '#5e503f',
+    },
     extend: {
       screens: {
         md: '1011px',
