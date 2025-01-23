@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useLayoutEffect } from 'react';
 import { Rating } from "@mui/material";
 
 
@@ -35,29 +35,27 @@ function SingleItem({ handleAddMultiple, formatPrice }) {
         }
     }
 
-    
-
-    function getOffsetHeight() {
-        setTimeout(() => {
-            const dynamicText = document.querySelector(".dynamic-text");
-            const dynamicTextHeight = dynamicText.offsetHeight;
-            if (dynamicTextHeight > 200) {
-                dynamicText.style.fontSize = "12px";
-            }
-        }, 100)
+    function dynamicHeight() {
+        const dynamicText = document.querySelector(".dynamic-text");
+        const dynamicTextHeight = dynamicText.offsetHeight;
+        if (dynamicTextHeight > 200) {
+            dynamicText.style.fontSize = "12px";
+        }
     }
 
-    getOffsetHeight();
+    setTimeout(dynamicHeight, 100);
 
     return (
-        <div className="grid grid-cols-[1fr_0.5fr_0.5fr] grid-rows-[20px_100px_200px_50px_50px] mx-20 mt-10 max-w-[830px] mx-auto">
-            <Link className="col-span-3" to="/">Back</Link>
+        <div className="grid grid-cols-[1fr_0.5fr_0.5fr] grid-rows-[20px_300px_50px_50px] mx-20 mt-10 max-w-[830px] mx-auto">
             {loading ? (
-                <h1>LOADING</h1>
-                ) : <>
+                <h1 className="col-span-3 text-center">LOADING</h1>
+            ) : <>
+                    <Link className="col-span-3" to="/">Back</Link>
                     <img className="col-span-1 row-span-4 h-[400px] justify-self-center pt-3" src={product.image} alt={product.title} />
-                    <h1 className="col-span-2 text-center pt-10 font-extrabold mx-auto place-self-end">{product.title}</h1>
-                    <p className="col-span-2 place-self-center mx-3 dynamic-text">{product.description}</p>
+                    <div className="row-span-1 col-span-2 place-self-center">
+                        <h1 className="mx-4 pt-10 pb-2 font-extrabold">{product.title}</h1>
+                        <p className=" mx-4 dynamic-text">{product.description}</p>
+                    </div>
                     <div className="flex col-span-2 justify-center pt-4">
                         <Rating name='half-rating-read' defaultValue={product.rating.rate} precision={0.1} readOnly />
                         <p className="ml-2">{product.rating.count}</p>
