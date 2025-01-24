@@ -5,10 +5,8 @@ import { Link } from 'react-router-dom';
 function Cards({ filteredProducts, handleAdd, formatPrice }) {
   
 
-
-
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-white pt-6">
+        <div className="flex flex-col items-center justify-center bg-white pt-6 mt-header h-[100vh_-_header] pb-4">
             <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 place-items-center max-w-7xl ">
                 {filteredProducts.map((item) => (
                     <div listid={item.id} key={item.id} className="w-[450px] h-[250px] grid grid-cols-4 grid-rows-4
@@ -22,10 +20,10 @@ function Cards({ filteredProducts, handleAdd, formatPrice }) {
                         </Link>
                         <div className="flex col-span-2 justify-center pt-8">
                             <Rating name='half-rating-read' defaultValue={item.rating.rate} precision={0.1} readOnly />
-                            <p className="ratingCount">{item.rating.count}</p>
+                            <p className="ml-1 mt-0.5">{item.rating.count}</p>
                         </div>
                         <Link to={`/details/${item.id}`}>
-                            <p className="font-bold pt-8 pl-9">${formatPrice(item)}</p>
+                            <p className="font-bold pt-7 pl-9">${formatPrice(item)}</p>
                         </Link>
                         <div listid={item.id} className="pt-5">
                             <button onClick={handleAdd} className="h-[36px] py-1 border border-black p-2 rounded-xl  bg-navy text-white hover:bg-white hover:text-navy">Add to Cart</button>
@@ -37,4 +35,4 @@ function Cards({ filteredProducts, handleAdd, formatPrice }) {
     )
 }
 
-export default Cards;
+export default Cards

@@ -20,8 +20,7 @@ function Cart({ shoppingCartList, handleChange, add, subtract, formatPrice, remo
 
 
     return (
-        <div className="w-[450px] mx-auto">
-            <Link to="/">GO BACK</Link>
+        <div className="w-[450px] mx-auto mt-header pb-6">
             {shoppingCartList.map((item) => (
                 <div className="grid grid-cols-[150px_300px] grid-rows-[100px_20px_40px] py-4 border-b border-navy w-[450px] mt-2" listid={item.id} key={item.id}>
                     <Link className="col-span-1 row-span-3" to={`/details/${item.id}`}>
@@ -31,7 +30,7 @@ function Cart({ shoppingCartList, handleChange, add, subtract, formatPrice, remo
                         <p className="text-center align-items-center ml-2">{item.title}</p>
                     </Link>
                     <p className="justify-self-end mr-6">${formatPrice(item)}</p>
-                    <div className="flex gap-4 justify-self-end">
+                    <div className="flex gap-4 justify-self-end" listid={item.id}>
                         <div className="inline-flex items-center border-black border-solid  border-2 rounded-lg h-[27px] mt-[9px]">
                             <button
                                 className="font-bold pl-2"
@@ -62,4 +61,4 @@ function Cart({ shoppingCartList, handleChange, add, subtract, formatPrice, remo
     )
 };
 
-export default Cart;
+export default Cart

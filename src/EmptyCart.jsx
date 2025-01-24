@@ -2,7 +2,7 @@ function EmptyCart() {
 
 
     return (
-        <div>
+        <div className="mt-header">
             <h1>Your cart is EMPTY!</h1>
         </div>
     )

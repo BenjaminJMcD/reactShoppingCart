@@ -9,13 +9,10 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 function App() {
 
-  //localStorage.clear();
-
   const [shoppingCartList, setShoppingCartList] = useState(() => {
     const storedList = localStorage.getItem('cart');
     return storedList ? JSON.parse(storedList) : [];
   });
-
 
   const [items, setItems] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -140,6 +137,7 @@ function App() {
 
   function removeItem(e) {
     let id = e.target.parentNode.getAttribute("listid");
+    console.log(e.target.parentNode)
     let newArray = shoppingCartList.filter(function(item) {
       return item.id != id
     })
@@ -149,16 +147,18 @@ function App() {
   return (
     <div className="app">
       <BrowserRouter>
-        <Link className="no-underline text-navy" to="/">
-          <div onClick={resetFilter} className="bg-white h-32 pt-9">
-            <h1 className="text-7xl text-center my-0 pl-4">FANCY SHOPS</h1>
-          </div>
-        </Link>
-        <NavBar
-          handleFilter = {handleFilter}
-          shoppingCartList={shoppingCartList}
-          total={total}
-        />
+        <div className="fixed top-0 z-10">
+          <Link className="no-underline text-navy" to="/">
+            <div onClick={resetFilter} className="bg-white h-32 pt-9">
+              <h1 className="text-7xl text-center my-0 pl-4">FANCY SHOPS</h1>
+            </div>
+          </Link>
+          <NavBar
+            handleFilter = {handleFilter}
+            shoppingCartList={shoppingCartList}
+            total={total}
+          />
+        </div>
         <Routes>
             {loading ? (
               <Route path="/" element={
@@ -166,7 +166,7 @@ function App() {
               }
               />
             ): <Route path="/" element={
-                <Cards 
+                <Cards
                   filteredProducts={filteredProducts}
                   handleAdd={handleAdd}
                   formatPrice={formatPrice}
@@ -183,7 +183,7 @@ function App() {
             />
             {shoppingCartList.length > 0 ? (
             <Route path="/cart" element={
-              <Cart 
+              <Cart
                 shoppingCartList={shoppingCartList}
                 setShoppingCartList={setShoppingCartList}
                 total={total}
@@ -192,7 +192,7 @@ function App() {
                 handleChange={handleChange}
                 formatPrice={formatPrice}
                 removeItem={removeItem}
-              />} 
+              />}
             />
             ): <Route path="/cart" element={
                 <EmptyCart/>}

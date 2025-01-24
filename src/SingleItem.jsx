@@ -46,7 +46,7 @@ function SingleItem({ handleAddMultiple, formatPrice }) {
     setTimeout(dynamicHeight, 100);
 
     return (
-        <div className="grid grid-cols-[1fr_0.5fr_0.5fr] grid-rows-[20px_350px_100px] mx-20 mt-10 max-w-[830px] mx-auto">
+        <div className="grid grid-cols-[1fr_0.5fr_0.5fr] grid-rows-[20px_350px_100px] mx-20 mt-[195px] max-w-[830px] mx-auto">
             {loading ? (
                 <h1 className="col-span-3 text-center">LOADING</h1>
             ) : <>

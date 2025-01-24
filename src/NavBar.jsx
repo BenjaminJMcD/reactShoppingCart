@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function NavBar({ handleFilter, total }) {
 
     return (
-        <div className="w-screen inline-flex  border-b border-navy">
+        <div className="w-screen inline-flex bg-[#FFFFFF]">
             <nav className="flex justify-between max-w-xl m-auto "> 
                 <Link className="no-underline text-navy py-4 px-4 hover:bg-navy hover:text-white" to="/">
                     <p onClick={handleFilter}>Electronics</p>

@@ -19,6 +19,9 @@ export default {
       maxWidth: {
         '7xl': '1450px',
       },
+      spacing: {
+        'header': '185px', 
+      },
     },
   },
   plugins: [],
