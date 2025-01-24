@@ -52,7 +52,7 @@ function SingleItem({ handleAddMultiple, formatPrice }) {
             ) : <>
                     <Link className="col-span-3" to="/">Back</Link>
                     <img className="col-span-1 row-span-4 h-[400px] justify-self-center pt-3" src={product.image} alt={product.title} />
-                    <div className="row-span-1 col-span-2 place-self-center">
+                    <div className="row-span-1 col-span-2 place-self-center pb-5">
                         <h1 className="mx-6 pt-10 pb-2 font-extrabold">{product.title}</h1>
                         <p className=" mx-6 dynamic-text">{product.description}</p>
                         <div className="flex col-span-2 justify-center pt-4 mr-2">
@@ -78,4 +78,4 @@ function SingleItem({ handleAddMultiple, formatPrice }) {
     )
 }
 
-export default SingleItem;
+export default SingleItem
