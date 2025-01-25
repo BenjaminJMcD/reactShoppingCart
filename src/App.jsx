@@ -147,10 +147,11 @@ function App() {
   return (
     <div className="app">
       <BrowserRouter>
-        <div className="fixed top-0 z-10">
+        <div className="fixed top-0 z-10 w-screen">
           <Link className="no-underline text-navy" to="/">
-            <div onClick={resetFilter} className="bg-white h-32 pt-9">
-              <h1 className="text-center  xs:text-6xl xs:pr-[6px] sm:text-7xl sm:pr-[12px] ">FANCY SHOPS</h1>
+            <div onClick={resetFilter} className="bg-white 
+           xs:h-20 sm:h-32 xs:pt-4 sm:pt-9">
+              <h1 className="text-center  xs:text-5xl xs:pr-[6px] sm:text-7xl sm:pr-[12px] ">FANCY SHOPS</h1>
             </div>
           </Link>
           <NavBar
@@ -203,4 +204,4 @@ function App() {
   )
 };
 
-export default App;
+export default App
