@@ -57,7 +57,7 @@ function SingleItem({ handleAddMultiple, formatPrice }) {
                         <p className=" mx-6 dynamic-text">{product.description}</p>
                         <div className="flex col-span-2 justify-center pt-4 mr-2">
                             <Rating name='half-rating-read' defaultValue={product.rating.rate} precision={0.1} readOnly />
-                            <p className="ml-2">{product.rating.count}</p>
+                            <p className="ml-1 pt-[1px]">{product.rating.count}</p>
                         </div>
                     </div>
                     <p className="font-extrabold justify-self-end mt-[15px]">${formatPrice(product)}</p>
