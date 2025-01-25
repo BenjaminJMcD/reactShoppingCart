@@ -20,7 +20,7 @@ function Cart({ shoppingCartList, handleChange, add, subtract, formatPrice, remo
 
 
     return (
-        <div className="w-[450px] mx-auto mt-header pb-6">
+        <div className="xs:w-[350px] sm:w-[450px] sm:mx-auto mt-header pb-6">
             {shoppingCartList.map((item) => (
                 <div className="grid grid-cols-[150px_300px] grid-rows-[100px_20px_40px] py-4 border-b border-navy w-[450px] mt-2" listid={item.id} key={item.id}>
                     <Link className="col-span-1 row-span-3" to={`/details/${item.id}`}>

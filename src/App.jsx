@@ -150,7 +150,7 @@ function App() {
         <div className="fixed top-0 z-10">
           <Link className="no-underline text-navy" to="/">
             <div onClick={resetFilter} className="bg-white h-32 pt-9">
-              <h1 className="text-6xl sm:text-7xl text-center my-0 pl-4 ">FANCY SHOPS</h1>
+              <h1 className="text-center  xs:text-6xl xs:pr-[6px] sm:text-7xl sm:pr-[12px] ">FANCY SHOPS</h1>
             </div>
           </Link>
           <NavBar
@@ -203,4 +203,4 @@ function App() {
   )
 };
 
-export default App
+export default App;
