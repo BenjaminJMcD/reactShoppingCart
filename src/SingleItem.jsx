@@ -78,4 +78,4 @@ function SingleItem({ handleAddMultiple, formatPrice }) {
     )
 }
 
-export default SingleItem
+export default SingleItem;
