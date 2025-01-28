@@ -13,7 +13,7 @@ function Cards({ filteredProducts, handleAdd, formatPrice }) {
                     bg-[#FFFFFF]
                     border border-black md:rounded-xl  hover:shadow-2xl">
                         <Link to={`/details/${item.id}`} className="col-span-1 row-span-4">
-                            <img className="h-[250px] justify-self-center px-4 py-5" src={item.image} alt={item.title} />
+                            <img className="row-span-2 object-contain xs:w-[170px] sm:w-[200px] h-[240px] py-[10px]" src={item.image} alt={item.title} />
                         </Link>
                         <div className="my-auto pr-[14px] pt-[25px]">
                             <Link to={`/details/${item.id}`} className="text-center">
