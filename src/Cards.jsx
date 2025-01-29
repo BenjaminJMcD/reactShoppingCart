@@ -36,7 +36,7 @@ function Cards({ filteredProducts, handleAdd, formatPrice }) {
                                 <p className="ml-1 pt-[1px]">{item.rating.count}</p>
                             </div>
                         </div>
-                        <div className="xs:pb-5 sm:flex sm:gap-4 sm:pb-5 justify-self-end pr-[18px]">
+                        <div className="xs:pb-5 sm:flex sm:gap-4 sm:pb-5 xs:justify-self-end pr-[18px]">
                             <Link to={`/details/${item.id}`}>
                                 <p className="font-bold xs:pb-0.5 xs:pt-2 xs:pr-1 xs:justify-self-end sm:pr-0 sm:pt-7 sm:pl-9">${formatPrice(item)}</p>
                             </Link>
