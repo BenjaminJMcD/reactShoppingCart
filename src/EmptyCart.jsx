@@ -2,7 +2,7 @@ function EmptyCart() {
 
 
     return (
-        <div className="mt-header justify-self-center">
+        <div className="mt-[300px] justify-self-center">
             <h1>Your cart is EMPTY!</h1>
         </div>
     )
