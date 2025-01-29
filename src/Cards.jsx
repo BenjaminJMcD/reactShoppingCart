@@ -10,7 +10,7 @@ function Cards({ filteredProducts, handleAdd, formatPrice }) {
 
 
     return (
-        <div className="flex flex-col items-center justify-center bg-white pt-6 mt-header xs:mt-[138px] sm:mt-header pb-4">
+        <div className="flex flex-col items-center justify-center bg-white pt-6 xs:mt-[138px] sm:mt-header pb-4">
             <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-4 place-items-center max-w-7xl ">
                 {filteredProducts.map((item) => (
                     <div listid={item.id} key={item.id} className="xs:w-[350px] sm:w-[450px] sm:h-[250px] grid xs:grid-cols-[170px_180px] sm:grid-cols-[200px_250px] grid-rows-[175px_75px]

@@ -4,6 +4,7 @@ import SingleItem from './SingleItem';
 import Cart from './Cart';
 import NavBar from './NavBar';
 import EmptyCart from './EmptyCart';
+import Loading from './Loading';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 
@@ -162,10 +163,7 @@ function App() {
         </div>
         <Routes>
             {loading ? (
-              <Route path="/" element={
-                <h1>LOADING</h1>
-              }
-              />
+              <Route path="/" element={<Loading/>}/>
             ): <Route path="/" element={
                 <Cards
                   filteredProducts={filteredProducts}
@@ -204,4 +202,4 @@ function App() {
   )
 };
 
-export default App
+export default App;
