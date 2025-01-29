@@ -38,7 +38,7 @@ function Cards({ filteredProducts, handleAdd, formatPrice }) {
                         </div>
                         <div className="xs:pb-5 sm:flex sm:gap-4 sm:pb-5 xs:justify-self-end pr-[18px]">
                             <Link to={`/details/${item.id}`}>
-                                <p className="font-bold xs:pb-0.5 xs:justify-self-end xs:pt-2 xs:pr-1 sm:pr-0 sm:pt-7 sm:pl-9">${formatPrice(item)}</p>
+                                <p className="font-bold xs:pb-0.5 xs:flex xs:justify-self-end xs:pt-2 xs:pr-1 sm:pr-0 sm:pt-7 sm:pl-9">${formatPrice(item)}</p>
                             </Link>
                             <div listid={item.id} className="sm:pt-5">
                                 <button onClick={handleAdd} className="h-[36px] py-1 border border-black p-2 rounded-xl  bg-navy text-white hover:bg-white hover:text-navy">Add to Cart</button>
@@ -51,4 +51,4 @@ function Cards({ filteredProducts, handleAdd, formatPrice }) {
     )
 }
 
-export default Cards;
+export default Cards

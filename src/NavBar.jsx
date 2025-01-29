@@ -5,7 +5,7 @@ function NavBar({ handleFilter, total }) {
 
     return (
         <div className="w-screen inline-flex bg-[#FFFFFF]">
-            <nav className="flex text-center sm:mx-auto xs:w-[270px] sm:w-[600px] xs:text-xs xs:ml-5 sm:ml-0 sm:text-base sm:justify-center sm:pr-4"> 
+            <nav className="flex text-center sm:mx-auto xs:w-[270px] sm:w-[600px] xs:text-xs xs:ml-5 sm:text-base sm:justify-center sm:pr-4"> 
                 <Link className="no-underline text-navy xs:py-5 sm:py-4 xs:pr-2 xs:pl-4 sm:px-4 hover:bg-navy hover:text-white" to="/">
                     <p onClick={handleFilter}>Electronics</p>
                 </Link>
@@ -31,4 +31,4 @@ function NavBar({ handleFilter, total }) {
     )
 }
 
-export default NavBar;
+export default NavBar
