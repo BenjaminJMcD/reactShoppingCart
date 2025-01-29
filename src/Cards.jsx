@@ -24,7 +24,7 @@ function Cards({ filteredProducts, handleAdd, formatPrice }) {
                                 <p
                                 ref={(el) => {
                                     if (el) {
-                                      if (el.offsetHeight > 140) {
+                                      if (el.offsetHeight > 100) {
                                         el.style.fontSize="12px";
                                       }
                                     }
@@ -36,7 +36,7 @@ function Cards({ filteredProducts, handleAdd, formatPrice }) {
                                 <p className="ml-1 pt-[1px]">{item.rating.count}</p>
                             </div>
                         </div>
-                        <div className="xs:pb-5 sm:flex sm:gap-4 sm:pb-5 xs:justify-self-end pr-[18px]">
+                        <div className="xs:pb-9 sm:flex sm:gap-4 sm:pb-5 xs:justify-self-end pr-[18px]">
                             <Link to={`/details/${item.id}`}>
                                 <p className="font-bold xs:pb-0.5 xs:flex xs:justify-end xs:pt-2 xs:pr-1 sm:pr-0 sm:pt-7 sm:pl-9">${formatPrice(item)}</p>
                             </Link>
@@ -51,4 +51,4 @@ function Cards({ filteredProducts, handleAdd, formatPrice }) {
     )
 }
 
-export default Cards
+export default Cards;
