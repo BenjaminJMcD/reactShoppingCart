@@ -4,7 +4,7 @@ import { Rating } from "@mui/material";
 import Loading from "./Loading";
 
 
-function SingleItem({ handleAddMultiple, formatPrice }) {
+function SingleMobile({ handleAddMultiple, formatPrice }) {
 
     const { id } = useParams();
     const [product, setProduct] = useState({});
@@ -79,4 +79,4 @@ function SingleItem({ handleAddMultiple, formatPrice }) {
     )
 }
 
-export default SingleItem
+export default SingleMobile;

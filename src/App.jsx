@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Cards from './Cards';
 import SingleItem from './SingleItem';
+import SingleMobile from './SingleMobile';
 import Cart from './Cart';
 import NavBar from './NavBar';
 import EmptyCart from './EmptyCart';
@@ -173,7 +174,7 @@ function App() {
               />
             }
             <Route path="/details/:id" element={
-              <SingleItem
+              <SingleMobile
                 shoppingCartList={shoppingCartList}
                 setShoppingCartList={setShoppingCartList}
                 handleAddMultiple={handleAddMultiple}
