@@ -19,6 +19,7 @@ function App() {
   const [items, setItems] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [mobile, setMobile] = useState(false);
 
   useEffect(() => {
     setLoading(true);
@@ -203,4 +204,4 @@ function App() {
   )
 };
 
-export default App;
+export default App
