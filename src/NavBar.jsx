@@ -21,9 +21,9 @@ function NavBar({ handleFilter, total }) {
             </nav>
             <div className="shopIcon-Dynamic">
               <Link to="/cart">
-                  <img src={shoppingCartIcon} alt="Shopping Cart Image" className="w-10 h-10 absolute xs:right-7 xs:mt-2 sm:right-12 sm:mt-2" />
+                  <img src={shoppingCartIcon} alt="Shopping Cart Image" className="w-10 h-10 absolute xs:right-7 mt-2 sm:right-12" />
                   {total >0 &&
-                  <p className="w-7 h-7 font-bold absolute text-center xs:right-4 xs:top-[82px] sm:pb-2 sm:right-9 sm:top-[128px] bg-white border-4 border-navy border-solid rounded-2xl">{total}</p>
+                  <p className="w-7 h-7 font-bold absolute text-center xs:right-4 xs:top-[82px] xs:pb-1 sm:pb-2 sm:right-9 sm:top-[128px] bg-white border-4 border-navy border-solid rounded-2xl">{total}</p>
                   }
               </Link>
             </div>
