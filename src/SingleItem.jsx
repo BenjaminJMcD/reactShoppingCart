@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useState, useEffect, useLayoutEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Rating } from "@mui/material";
 import Loading from "./Loading";
 
@@ -52,16 +52,16 @@ function SingleItem({ handleAddMultiple, formatPrice }) {
         }
     }
 
-    function dynamicHeight() {
-        const dynamicText = document.querySelector(".dynamic-text");
-        const dynamicTextHeight = dynamicText.offsetHeight
-        if (dynamicTextHeight > 160) {
-            dynamicText.style.fontSize = "12px";
-        }
-        requestAnimationFrame(dynamicHeight);
-    }
+    // function dynamicHeight() {
+    //     const dynamicText = document.querySelector(".dynamic-text");
+    //     const dynamicTextHeight = dynamicText.offsetHeight
+    //     if (dynamicTextHeight > 160) {
+    //         dynamicText.style.fontSize = "12px";
+    //     }
+    //     requestAnimationFrame(dynamicHeight);
+    // }
 
-    requestAnimationFrame(dynamicHeight);
+    // requestAnimationFrame(dynamicHeight);
 
 
     return (
@@ -102,7 +102,15 @@ function SingleItem({ handleAddMultiple, formatPrice }) {
                         <img className="sm:col-span-1 object-contain sm:row-span-2 sm:h-[400px] sm:justify-self-center pt-3" src={product.image} alt={product.title} />
                         <div className="place-self-center pb-5">
                             <h1 className="mx-6 pt-10 pb-2 font-extrabold sm:text-[16px] xs:text-[12px]">{product.title}</h1>
-                            <p className=" mx-6 dynamic-text">{product.description}</p>
+                            <p className=" mx-6"
+                                ref={(el) => {
+                                    if (el) {
+                                      if (el.offsetHeight > 160) {
+                                        el.style.fontSize="12px";
+                                      }
+                                    }
+                                }}
+                            >{product.description}</p>
                             <div className="flex col-span-2 justify-center pt-4 mr-2">
                                 <Rating name='half-rating-read' defaultValue={product.rating.rate} precision={0.1} readOnly />
                                 <p className="ml-1 pt-[1px]">{product.rating.count}</p>
@@ -131,4 +139,4 @@ function SingleItem({ handleAddMultiple, formatPrice }) {
     )
 }
 
-export default SingleItem;
+export default SingleItem

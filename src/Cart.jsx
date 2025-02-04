@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Rating } from "@mui/material";
 
 
 function Cart({ shoppingCartList, add, subtract, formatPrice, removeItem }) {
@@ -17,29 +16,23 @@ function Cart({ shoppingCartList, add, subtract, formatPrice, removeItem }) {
 
     let GrandTotal = grandTotal();
 
-    function dynamicHeight() {
-        const dynamicText = document.querySelector(".dynamic-text");
-        const dynamicTextHeight = dynamicText.offsetHeight
-        if (dynamicTextHeight > 100) {
-            dynamicText.style.fontSize = "12px";
-        }
-        requestAnimationFrame(dynamicHeight);
-
-    }
-
-    requestAnimationFrame(dynamicHeight);
-
-
-
+    
     return (
-        <div className="xs:w-[350px] xs:mx-auto sm:w-[450px] sm:mx-auto mt-header pb-6">
+        <div className="xs:w-[350px] xs:mx-auto sm:w-[450px] mx-auto mt-header pb-6">
             {shoppingCartList.map((item) => (
                 <div className="grid xs:grid-cols-[150px_200px] sm:grid-cols-[150px_300px] grid-rows-[100px_20px_40px] py-4 border-b border-navy xs:w-[350px] sm:w-[450px] mt-2" listid={item.id} key={item.id}>
                     <Link className="col-span-1 row-span-3" to={`/details/${item.id}`}>
                         <img className="h-[160px] mx-auto object-contain" src={item.image} alt={item.title} />
                     </Link>
                     <Link className="my-auto mx-[5px]" to={`/details/${item.id}`}>
-                        <p className="dynamic-text text-center align-items-center ml-2">{item.title}</p>
+                        <p className="ml-2"
+                            ref={(el) => {
+                                if (el) {
+                                  if (el.offsetHeight > 100) {
+                                    el.style.fontSize="12px";
+                                  }
+                                }
+                            }}>{item.title}</p>
                     </Link>
                     <p className="flex justify-self-end mr-1 mb-3">${formatPrice(item)}</p>
                     <div className="flex xs:gap-2 sm:gap-4 justify-self-end" listid={item.id}>
@@ -68,4 +61,4 @@ function Cart({ shoppingCartList, add, subtract, formatPrice, removeItem }) {
     )
 };
 
-export default Cart;
+export default Cart

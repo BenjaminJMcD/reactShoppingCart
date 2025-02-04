@@ -1,12 +1,8 @@
 import { Rating } from "@mui/material"
 import { Link } from 'react-router-dom';
-import { useState, useRef, useEffect } from 'react';
 
 
 function Cards({ filteredProducts, handleAdd, formatPrice }) {
-
-
-
 
 
     return (
