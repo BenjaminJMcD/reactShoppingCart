@@ -20,7 +20,7 @@ function Cart({ shoppingCartList, handleChange, add, subtract, formatPrice, remo
 
 
     return (
-        <div className="xs:w-[350px] sm:w-[450px] sm:mx-auto mt-header pb-6">
+        <div className="xs:w-[350px] xs:mx-auto sm:w-[450px] sm:mx-auto mt-header pb-6">
             {shoppingCartList.map((item) => (
                 <div className="grid xs:grid-cols-[150px_200px] sm:grid-cols-[150px_300px] grid-rows-[100px_20px_40px] py-4 border-b border-navy xs:w-[350px] sm:w-[450px] mt-2" listid={item.id} key={item.id}>
                     <Link className="col-span-1 row-span-3" to={`/details/${item.id}`}>
@@ -29,7 +29,7 @@ function Cart({ shoppingCartList, handleChange, add, subtract, formatPrice, remo
                     <Link className="my-auto mx-[5px]" to={`/details/${item.id}`}>
                         <p className="text-center font-bold align-items-center ml-2">{item.title}</p>
                     </Link>
-                    <p className="flex justify-self-end mr-2 mb-2">${formatPrice(item)}</p>
+                    <p className="flex justify-self-end mr-1 mb-3">${formatPrice(item)}</p>
                     <div className="flex xs:gap-2 sm:gap-4 justify-self-end" listid={item.id}>
                         <div className="inline-flex items-center border-black border-solid border-2 rounded-lg h-[27px] mt-[9px]">
                             <button
@@ -51,7 +51,7 @@ function Cart({ shoppingCartList, handleChange, add, subtract, formatPrice, remo
                     </div>
                 </div>
             ))}
-            <h1 className="flex font-bold justify-self-end mt-4 mr-2">Total: ${GrandTotal}</h1>
+            <h1 className="flex font-bold justify-end mt-4 mr-2">Total: ${GrandTotal}</h1>
         </div>
     )
 };
