@@ -16,9 +16,8 @@ function Cart({ shoppingCartList, add, subtract, formatPrice, removeItem }) {
 
     let GrandTotal = grandTotal();
 
-    
     return (
-        <div className="xs:w-[350px] xs:mx-auto sm:w-[450px] mx-auto mt-header pb-6">
+        <div className="xs:w-[350px] xs:mx-auto sm:w-[450px] sm:mt-header xs:mt-[138px] pb-6">
             {shoppingCartList.map((item) => (
                 <div className="grid xs:grid-cols-[150px_200px] sm:grid-cols-[150px_300px] grid-rows-[100px_20px_40px] py-4 border-b border-navy xs:w-[350px] sm:w-[450px] mt-2" listid={item.id} key={item.id}>
                     <Link className="col-span-1 row-span-3" to={`/details/${item.id}`}>
