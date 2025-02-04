@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import Cards from './Cards';
 import SingleItem from './SingleItem';
-import SingleMobile from './SingleMobile';
 import Cart from './Cart';
 import NavBar from './NavBar';
 import EmptyCart from './EmptyCart';
@@ -19,7 +18,6 @@ function App() {
   const [items, setItems] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [mobile, setMobile] = useState(false);
 
   useEffect(() => {
     setLoading(true);
@@ -175,7 +173,7 @@ function App() {
               />
             }
             <Route path="/details/:id" element={
-              <SingleMobile
+              <SingleItem
                 shoppingCartList={shoppingCartList}
                 setShoppingCartList={setShoppingCartList}
                 handleAddMultiple={handleAddMultiple}
