@@ -84,7 +84,7 @@ function SingleItem({ handleAddMultiple, formatPrice }) {
                     <div className="inline-flex px-6 w-[100vw] justify-end mb-4">
                         <p className="font-extrabold justify-self-end mt-[15px]">${formatPrice(product)}</p>
                         <div listid={product.id} className="">
-                            <div className="inline-flex items-center border-black border-solid mx-auto border-2 rounded-lg mt-3 mx-4">
+                            <div className="inline-flex items-center border-black border-solid mx-auto border-2 rounded-lg mt-3 ml-4">
                                 <button onClick={incrementDown} className="font-bold pl-2 ">-</button>
                                 <input id="inputAmount" type="numerical" className="w-[25px] text-center justify-center p-0"
                                 min="1"
@@ -92,7 +92,7 @@ function SingleItem({ handleAddMultiple, formatPrice }) {
                                 />
                                 <button onClick={incrementUp} className="font-bold pr-1 ">+</button>
                             </div>
-                            <button onClick={handleAddMultiple} className="h-[36px] py-1 border border-black p-2 rounded-xl bg-navy text-white hover:bg-white hover:text-navy">Add to Cart 
+                            <button onClick={handleAddMultiple} className="h-[36px] py-1 ml-4 border border-black p-2 rounded-xl bg-navy text-white hover:bg-white hover:text-navy">Add to Cart 
                             </button>
                         </div>
                     </div>
