@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Rating } from "@mui/material";
 
 
-function Cart({ shoppingCartList, handleChange, add, subtract, formatPrice, removeItem }) {
+function Cart({ shoppingCartList, add, subtract, formatPrice, removeItem }) {
 
 
     function formatSubtotal(item) {
@@ -17,6 +17,18 @@ function Cart({ shoppingCartList, handleChange, add, subtract, formatPrice, remo
 
     let GrandTotal = grandTotal();
 
+    function dynamicHeight() {
+        const dynamicText = document.querySelector(".dynamic-text");
+        const dynamicTextHeight = dynamicText.offsetHeight
+        if (dynamicTextHeight > 100) {
+            dynamicText.style.fontSize = "12px";
+        }
+        requestAnimationFrame(dynamicHeight);
+
+    }
+
+    requestAnimationFrame(dynamicHeight);
+
 
 
     return (
@@ -27,7 +39,7 @@ function Cart({ shoppingCartList, handleChange, add, subtract, formatPrice, remo
                         <img className="h-[160px] mx-auto object-contain" src={item.image} alt={item.title} />
                     </Link>
                     <Link className="my-auto mx-[5px]" to={`/details/${item.id}`}>
-                        <p className="text-center font-bold align-items-center ml-2">{item.title}</p>
+                        <p className="dynamic-text text-center align-items-center ml-2">{item.title}</p>
                     </Link>
                     <p className="flex justify-self-end mr-1 mb-3">${formatPrice(item)}</p>
                     <div className="flex xs:gap-2 sm:gap-4 justify-self-end" listid={item.id}>
