@@ -23,7 +23,7 @@ function NavBar({ handleFilter, total }) {
               <Link to="/cart">
                   <img src={shoppingCartIcon} alt="Shopping Cart Image" className="w-10 h-10 absolute xs:right-7 mt-2 sm:right-8 md:right-12" />
                   {total >0 &&
-                  <p className="w-7 h-7 leading-[19px] font-bold absolute text-center xs:right-4 xs:top-[82px] xs:pb-5 sm:pb-2 sm:right-5 md:right-9 sm:top-[128px] bg-white border-4 border-navy border-solid rounded-2xl">{total}</p>
+                  <p className="w-7 h-7 leading-7 text-center font-bold absolute xs:right-4 xs:top-[82px] sm:right-5 sm:top-[128px] md:right-9 bg-white border-4 border-navy border-solid rounded-2xl">{total}</p>
                   }
               </Link>
             </div>
@@ -31,4 +31,4 @@ function NavBar({ handleFilter, total }) {
     )
 }
 
-export default NavBar
+export default NavBar;
